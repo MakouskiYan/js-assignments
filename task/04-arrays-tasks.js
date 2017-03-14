@@ -368,7 +368,6 @@ function getPositivesCount(arr) {
             return v;
         }
     }
-
     var x = arr.filter(positive);
     return x.length;
 }
@@ -469,7 +468,7 @@ function findAllOccurences(arr, item) {
  *    ['rock', 'paper', 'scissors']     => 'rock,paper,scissors'
  */
 function toStringList(arr) {
-    throw new Error('Not implemented');
+    return arr.toString();
 }
 
 
@@ -499,6 +498,7 @@ function toStringList(arr) {
  */
 function sortCitiesArray(arr) {
     throw new Error('Not implemented');
+
 }
 
 /**
@@ -521,6 +521,7 @@ function sortCitiesArray(arr) {
  */
 function getIdentityMatrix(n) {
     throw new Error('Not implemented');
+    return Array(n).fill(0);
 }
 
 /**
@@ -537,7 +538,11 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-    throw new Error('Not implemented');
+    var arr = Array(end+1-start).fill();
+    var x = arr.map(function(val,ind){
+        return start+ind;
+    });
+    return x;
 }
 
 /**
@@ -603,6 +608,8 @@ function group(array, keySelector, valueSelector) {
  */
 function selectMany(arr, childrenSelector) {
     throw new Error('Not implemented');
+    var x = arr.reduce(childrenSelector);
+    return x;
 }
 
 
@@ -620,6 +627,7 @@ function selectMany(arr, childrenSelector) {
  */
 function getElementByIndexes(arr, indexes) {
     throw new Error('Not implemented');
+    return arr[indexes];
 }
 
 
@@ -642,7 +650,22 @@ function getElementByIndexes(arr, indexes) {
  *
  */
 function swapHeadAndTail(arr) {
-    throw new Error('Not implemented');
+    var len = arr.length;
+    if(len%2!==0 && len>1){
+        var a = arr.slice(0,(len/2)-0.5);
+        var b = arr.slice((len/2)-0.5,(len/2)+0.5);
+        var c = arr.slice([(len/2)+0.5]);
+        var res = c.concat(b);
+        res = res.concat(a);
+        return res;
+    }else if(len===1){
+        return arr;
+    }else{
+        var a = arr.slice(0,len/2);
+        var b = arr.slice(len/2);
+        var res = b.concat(a);
+        return res;
+    }
 }
 
 
