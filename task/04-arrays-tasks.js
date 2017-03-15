@@ -520,11 +520,18 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-    throw new Error('Not implemented');
-    var x = Array(n).fill(Array(n).fill(0));
-    x.map(function(val,ind){
-        return val[ind]=1; //why it's changing everywhere?
+    // throw new Error('Not implemented');
+    // var x = Array(n).fill(Array(n).fill(0));
+    // x.map(function(val,ind){
+    //     return val[ind]=1; //why it's changing everywhere?
+    // });
+    // return x;
+    var x = Array(n).fill().map(function(item, index) {
+        var elem = Array(n).fill(0);
+        elem[index] = 1;
+        return elem;
     });
+
     return x;
 }
 

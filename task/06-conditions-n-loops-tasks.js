@@ -30,7 +30,15 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if(num%3==0 && num%5==0){
+        return "FizzBuzz";
+    }else if(num%5==0){
+        return "Buzz";
+    }else if(num%3==0){
+        return "Fizz";
+    }else{
+        return num;
+    }
 }
 
 
@@ -46,7 +54,11 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    var res = 1;
+    for(var i=n;i>0;i--){
+        res*=i;
+    }
+    return res;
 }
 
 
@@ -63,12 +75,16 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    var res = 0;
+    for(var i = n1;i<=n2;i++){
+        res+=i;
+    }
+    return res;
 }
 
 
 /**
- * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
+     * Returns true, if a triangle can be built with the specified sides a,b,c and false in any other ways.
  *
  * @param {number} a
  * @param {number} b
@@ -82,7 +98,11 @@ function getSumBetweenNumbers(n1, n2) {
  *   10,10,10 =>  true
  */
 function isTriangle(a,b,c) {
-    throw new Error('Not implemented');
+    if(a+b>c && a+c>b && b+c>a){
+        return true;
+    }else{
+        return false;
+    }
 }
 
 
@@ -193,6 +213,9 @@ function findFirstSingleChar(str) {
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
     throw new Error('Not implemented');
+    if(a<b){
+
+    }
 }
 
 
@@ -209,7 +232,11 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    var str1="";
+    for(var i = str.length-1;i>=0;i--){
+        str1+=str[i];
+    }
+    return str1;
 }
 
 
@@ -226,7 +253,12 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    var str1 = num.toString();
+    var str2="";
+    for(var i = str1.length-1;i>=0;i--){
+        str2+=str1[i];
+    }
+    return Number(str2);
 }
 
 
